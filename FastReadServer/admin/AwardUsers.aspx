@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/admin/AdminM.Master"  CodeBehind="AwardUsers.aspx.cs" Inherits="FastReadServer.admin.AwardUsers" %>
+<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/admin/AdminM.Master"  CodeBehind="AwardUsers.aspx.cs" Inherits="FastReadServer.admin.AwardUsers" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="rightContent" runat="server">
     <div class="breadcrumbs" id="breadcrumbs">

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AdminM.master.cs" Inherits="FastReadServer.admin.AdminM" %>
 
 <!DOCTYPE html>
@@ -389,3 +390,396 @@
 </body>
 
 </html>
+=======
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AdminM.master.cs" Inherits="FastReadServer.admin.AdminM" %>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta charset="utf-8" />
+    <title>快速阅读后台管理</title>
+
+    <meta name="description" content="快速阅读后台管理" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+    <!-- bootstrap & fontawesome -->
+    <link rel="stylesheet" href="css/quickreading/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/quickreading/font-awesome.min.css" />
+
+    <!-- page specific plugin styles -->
+    <link rel="stylesheet" href="css/quickreading/colorbox.css" />
+
+    <!-- text fonts -->
+
+
+    <!-- ace styles -->
+    <link rel="stylesheet" href="css/quickreading/ace.min.css" />
+
+    <!--[if lte IE 9]>
+			<link rel="stylesheet" href="css/quickreading/ace-part2.min.css" />
+		<![endif]-->
+    <link rel="stylesheet" href="css/quickreading/ace-skins.min.css" />
+    <link rel="stylesheet" href="css/quickreading/ace-rtl.min.css" />
+
+    <!--[if lte IE 9]>
+		  <link rel="stylesheet" href="css/quickreading/ace-ie.min.css" />
+		<![endif]-->
+
+    <!-- inline styles related to this page -->
+
+    <!-- ace settings handler -->
+    <script src="js/quickreading/ace-extra.min.js"></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+
+    <!--[if lte IE 8]>
+		<script src="js/quickreading/html5shiv.js"></script>
+		<script src="js/quickreading/respond.min.js"></script>
+		<![endif]-->
+
+    <!--[if !IE]> -->
+    <script src="js/quickreading/jquery-2.1.1.min.js"></script>
+
+    <!-- <![endif]-->
+
+    <!--[if IE]>
+<script src="js/quickreading/jquery-1.11.1.min.js"></script>
+<![endif]-->
+
+    <!--[if !IE]> -->
+    <script type="text/javascript">
+        window.jQuery || document.write("<script src='js/quickreading/jquery.min.js'>" + "<" + "/script>");
+    </script>
+
+    <!-- <![endif]-->
+
+    <!--[if IE]>
+            <script type="text/javascript">
+                window.jQuery || document.write("<script src='js/quickreading/jquery1x.min.js'>"+"<"+"/script>");
+            </script>
+        <![endif]-->
+
+    <script type="text/javascript">
+        if ('ontouchstart' in document.documentElement) document.write("<script src='js/quickreading/jquery.mobile.custom.min.js'>" + "<" + "/script>");
+    </script>
+    <script src="js/quickreading/bootstrap.min.js"></script>
+
+
+
+    <!-- ace scripts -->
+    <script src="js/quickreading/ace-elements.min.js"></script>
+
+
+    <link type="text/css" rel="stylesheet" href="layui/css/layui.css">
+    <script src="layui/layui.js"></script>
+    <link type="text/css" rel="stylesheet" href="js/skin/default/layer.css">
+    <script src="js/layer.js"></script>
+</head>
+
+<body class="no-skin">
+    <form runat="server" id="mainform">
+        <div id="navbar" class="navbar navbar-default">
+            <script type="text/javascript">
+                try { ace.settings.check('navbar', 'fixed') } catch (e) { }
+            </script>
+            <div class="navbar-container" id="navbar-container">
+                <button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler">
+                    <span class="sr-only">Toggle sidebar</span>
+
+                    <span class="icon-bar"></span>
+
+                    <span class="icon-bar"></span>
+
+                    <span class="icon-bar"></span>
+                </button>
+
+                <div class="navbar-header pull-left">
+                    <a href="A000.aspx" class="navbar-brand">
+                        <small>
+                            <i class="fa fa-book"></i>
+                            快速阅读后台管理
+                        </small>
+                    </a>
+                </div>
+
+                <div class="navbar-buttons navbar-header pull-right" role="navigation">
+                    <ul class="nav ace-nav">
+
+
+                        <li class="light-blue">
+                            <a data-toggle="dropdown" href="#" class="dropdown-toggle">
+                                <img class="nav-user-photo" src="images/quickreading/user.jpg" />
+                                <span class="user-info" style="text-align: center; line-height: 35px;">
+                                    <asp:Label runat="server" ID="lblUerName"></asp:Label>
+                                </span>
+
+                                <i class="ace-icon fa fa-caret-down"></i>
+                            </a>
+
+                            <ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+                                <li>
+                                    <a href="javascript:showChangePWD()">
+                                        <i class="ace-icon fa fa-user"></i>
+                                        密码修改
+                                    </a>
+                                </li>
+
+                                <li class="divider"></li>
+
+                                <li>
+                                    <a href="login.aspx?act=logout">
+                                        <i class="ace-icon fa fa-power-off"></i>
+                                        退出
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- /.navbar-container -->
+        </div>
+
+        <div id="dlgPwdChange" style="display: none">
+
+            <div class="col-xs-10 col-sm-10">
+                <div class="widget-box">
+
+                    <div class="widget-body">
+                        <div class="widget-main">
+                            <div>
+                                <input type="password" class="form-control" id="oldPwd" placeholder="旧密码"></input>
+                            </div>
+
+                            <hr>
+                            <div>
+                                <input type="password" class="form-control" id="newPwd" placeholder="新密码"></input>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <script>
+            function showChangePWD() {
+                layer.open({
+                    type: 1,
+                    shade: false,
+                    title: false, //不显示标题
+                    content: $('#dlgPwdChange'), //捕获的元素，注意：最好该指定的元素要存放在body最外层，否则可能被其它的相对元素所影响
+                    area: ['400px', '300px'],
+                    btn: ['修改', '取消'],
+                    yes: function (index) {
+                        if ($("*#txtReply:last").val() == "") {
+                            layer.msg("请填写回复内容。");
+                            return false;
+                        }
+                        //回复
+                        window._IF.CHANGPWD(this,
+                        {
+                            "opwd": $("*#oldPwd:last").val(),
+                            "npwd": $("*#newPwd:last").val(),//回复内容
+                        },
+                        function (r) {
+                            if (r.ok) {
+                               
+                                layer.closeAll();
+                                layer.msg("已修改");
+                            } else {
+                                layer.msg(r.msg);
+                            }
+                        },
+                        function () {
+                        });
+                    },
+                    cancel: function () {
+
+                    }
+                });
+            }
+        </script>
+
+        <div class="main-container" id="main-container">
+            <script type="text/javascript">
+                try { ace.settings.check('main-container', 'fixed') } catch (e) { }
+            </script>
+
+            <div id="sidebar" class="sidebar responsive">
+                <script type="text/javascript">
+                    try { ace.settings.check('sidebar', 'fixed') } catch (e) { }
+                </script>
+
+
+                <ul class="nav nav-list">
+                    <li id="liA">
+                        <a href="#" class="dropdown-toggle">
+                            <i class="menu-icon fa fa-graduation-cap"></i>
+                            <span class="menu-text">授权信息 </span>
+
+                            <b class="arrow fa fa-angle-down"></b>
+                        </a>
+
+                        <b class="arrow"></b>
+
+
+                        <ul class="submenu">
+                            <li class="">
+                                <a href="A100.aspx">
+                                    <i class="menu-icon fa fa-caret-right"></i>
+                                    授权
+                                </a>
+
+                                <b class="arrow"></b>
+                            </li>
+                            <li class="">
+                                <a href="A200.aspx">
+                                    <i class="menu-icon fa fa-caret-right"></i>
+                                    更新日志
+                                </a>
+
+                                <b class="arrow"></b>
+                            </li>
+
+                        </ul>
+                    </li>
+
+                    <li id="liB">
+                        <a href="#" class="dropdown-toggle">
+                            <i class="menu-icon fa fa-cubes"></i>
+                            <span class="menu-text">资源</span>
+
+                            <b class="arrow fa fa-angle-down"></b>
+                        </a>
+
+                        <b class="arrow"></b>
+
+                        <ul class="submenu">
+
+                            <li class="">
+                                <a href="B100.aspx">
+                                    <i class="menu-icon fa fa-caret-right"></i>
+                                    课堂训练
+                                </a>
+
+                                <b class="arrow"></b>
+                            </li>
+
+                            <li class="">
+                                <a href="B200.aspx">
+                                    <i class="menu-icon fa fa-caret-right"></i>
+                                    阅读训练
+                                </a>
+
+                                <b class="arrow"></b>
+                            </li>
+
+
+                            <li class="">
+                                <a href="B300.aspx">
+                                    <i class="menu-icon fa fa-caret-right"></i>
+                                    视幅扩展
+                                </a>
+
+                                <b class="arrow"></b>
+                            </li>
+
+
+
+                            <li class="">
+                                <a href="B400.aspx">
+                                    <i class="menu-icon fa fa-caret-right"></i>
+                                    卡通图片
+                                </a>
+
+                                <b class="arrow"></b>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li id="liC">
+                        <a href="#" class="dropdown-toggle">
+                            <i class="menu-icon fa fa-cubes"></i>
+                            <span class="menu-text">抽奖</span>
+
+                            <b class="arrow fa fa-angle-down"></b>
+                        </a>
+
+                        <b class="arrow"></b>
+
+                        <ul class="submenu">
+
+                            <li class="">
+                                <a href="AwardManager.aspx">
+                                    <i class="menu-icon fa fa-caret-right"></i>
+                                    奖品
+                                </a>
+                                <b class="arrow"></b>
+                            </li>
+                            <li class="">
+                                <a href="AwardUsers.aspx">
+                                    <i class="menu-icon fa fa-caret-right"></i>
+                                    用户
+                                </a>
+
+                                <b class="arrow"></b>
+                            </li>
+                            
+                        </ul>
+                    </li>
+                </ul>
+                <!-- /.nav-list -->
+
+
+                <div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
+                    <i class="ace-icon fa fa-angle-double-left" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
+                </div>
+
+                <script type="text/javascript">
+                    try { ace.settings.check('sidebar', 'collapsed') } catch (e) { }
+                </script>
+            </div>
+
+            <div class="main-content">
+
+
+                <asp:ContentPlaceHolder runat="server" ID="rightContent"></asp:ContentPlaceHolder>
+
+            </div>
+            <!-- /.main-content -->
+
+
+
+        </div>
+        <!-- /.main-container -->
+
+
+
+        <!-- page specific plugin scripts -->
+        <script src="js/quickreading/ace.min.js"></script>
+        <script src="js/quickreading/jquery.colorbox-min.js"></script>
+        <!-- basic scripts -->
+
+        <!-- layer -->
+        <script src="js/com.js"></script>
+        <script src="js/AwardUsersCom.js"></script>
+        <!-- inline scripts related to this page -->
+    </form>
+
+    <script>
+        if ("<%=m_PageId%>".indexOf("Award") == 0) {
+            $("#liA").addClass("open");
+            $("#liA ul").show();
+        } else if ("<%=m_PageId%>".indexOf("B") == 0) {
+            $("#liB").addClass("open");
+            $("#liB ul").show();
+        } else if ("<%=m_PageId%>".indexOf("A") == 0) {
+            $("#liC").addClass("open");
+            $("#liC ul").show();
+        }
+    </script>
+</body>
+
+</html>
+>>>>>>> refs/remotes/origin/master

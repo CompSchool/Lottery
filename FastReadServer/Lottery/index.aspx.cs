@@ -1,13 +1,13 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace FastReadServer.admin
+namespace FastReadServer.Lottery
 {
-    public partial class AwardManager : System.Web.UI.Page
+    public partial class index : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
