@@ -18,6 +18,11 @@
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
     <OldToolsVersion>2.0</OldToolsVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -54,6 +59,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="admin\A000.aspx" />
+    <Content Include="admin\AwardManager.aspx" />
+    <Content Include="admin\AwardUsers.aspx" />
     <Content Include="admin\B400.aspx" />
     <Content Include="admin\B100.aspx" />
     <Content Include="admin\B101.aspx" />
@@ -306,6 +313,7 @@
     <Content Include="admin\images\quickreading\thumb-5.jpg" />
     <Content Include="admin\images\quickreading\thumb-6.jpg" />
     <Content Include="admin\images\quickreading\user.jpg" />
+    <Content Include="admin\js\AwardUsersCom.js" />
     <Content Include="admin\js\com.js" />
     <Content Include="admin\js\layer.js" />
     <Content Include="admin\js\quickreading\ace-elements.min.js" />
@@ -469,6 +477,19 @@
     <Compile Include="admin\A000.aspx.designer.cs">
       <DependentUpon>A000.aspx</DependentUpon>
     </Compile>
+    <Compile Include="admin\AwardManager.aspx.cs">
+      <DependentUpon>AwardManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\AwardManager.aspx.designer.cs">
+      <DependentUpon>AwardManager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\AwardUsers.aspx.cs">
+      <DependentUpon>AwardUsers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\AwardUsers.aspx.designer.cs">
+      <DependentUpon>AwardUsers.aspx</DependentUpon>
+    </Compile>
     <Compile Include="admin\B400.aspx.cs">
       <DependentUpon>B400.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -561,6 +582,7 @@
       <DependentUpon>api.ashx</DependentUpon>
     </Compile>
     <Compile Include="Appconfig.cs" />
+    <Compile Include="entity\DBAwardUsers.cs" />
     <Compile Include="entity\BaseEntity.cs" />
     <Compile Include="entity\BaseSingle.cs" />
     <Compile Include="entity\DBA100.cs" />
@@ -627,6 +649,10 @@
           <IISUrl>
           </IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
     </VisualStudio>

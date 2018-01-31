@@ -35,6 +35,10 @@ namespace FastReadServer
                 switch (action)
                 {
                     //
+                    case "GetAwardUsers":
+                        htRet = GetAwardUsersList(context);
+                        break;
+                    //
                     case "loadQues":
                         htRet = GetQuesList(context);
                         break;
@@ -127,6 +131,69 @@ namespace FastReadServer
             return true;
         }
 
+        /// <summary>
+        /// 获取抽奖用户信息
+        /// </summary>
+        /// <returns></returns>
+        private Hashtable GetAwardUsersList(HttpContext context)
+        {
+            Hashtable htRet = new Hashtable();
+            Hashtable rowData = new Hashtable();
+            try
+            {
+
+                FastReadServer.admin.UserInfo user = (FastReadServer.admin.UserInfo)context.Session[FastReadServer.admin.CConst.CSession.C_UserInfoKey];
+                if (user == null || user.UserId == "")
+                {
+                    htRet["msg"] = "用户信息超时，请重新登录！";
+                    htRet["ok"] = false;
+                    return htRet;
+                }
+
+                string sVerCode = CConvert.ToString(context.Request["vercode"]);
+                int iLimit = CConvert.ToInt32(context.Request["limit"]);
+                int iPage = CConvert.ToInt32(context.Request["page"]);
+
+                int allRows = 0;
+                DBAwardUsers dbm = new DBAwardUsers();
+                DataSet ds = dbm.GetAwardUsersList(sVerCode, iPage, iLimit, ref allRows);
+
+                //DBIndex dbm = new DBIndex();
+                //DataSet ds = dbm.GetVercodeList(sVerCode, iPage, iLimit, ref allRows);
+                if (ds.Tables[0].Rows.Count == 0)
+                {
+
+                    htRet["ok"] = true;
+                    htRet["cnt"] = 0;
+                    htRet["msg"] = "无数据！";
+                }
+                else
+                {
+                    ArrayList lst = new ArrayList();
+                    foreach (DataRow dr in ds.Tables[0].Rows)
+                    {
+                        Hashtable htItem = new Hashtable();
+
+                        htItem["UserID"] = CConvert.ToString(dr["UserID"]);
+                        htItem["UserName"] = CConvert.ToString(dr["UserName"]);
+                        lst.Add(htItem);
+                    }
+
+                    htRet["ok"] = true;
+                    htRet["lst"] = lst;
+                    htRet["cnt"] = allRows;
+                    htRet["curpage"] = iPage;
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                htRet["err"] = true;
+                htRet["msg"] = "获取轮播信息失败！" + ex.Message;
+            }
+            return htRet;
+        }
 
         /// <summary>
         /// 获取轮播图片信息

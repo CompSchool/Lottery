@@ -18,3 +18,12 @@ F:\Project\快速阅读1\快速阅读\FastReadServer\bin\System.Web.Extensions.d
 F:\Project\快速阅读1\快速阅读\FastReadServer\obj\Debug\FastReadServer.csprojResolveAssemblyReference.cache
 F:\Project\快速阅读1\快速阅读\FastReadServer\obj\Debug\FastReadServer.dll
 F:\Project\快速阅读1\快速阅读\FastReadServer\obj\Debug\FastReadServer.pdb
+C:\陈晓华\自媒体\日志\fastRead\FastReadServer\bin\FastReadServer.dll
+C:\陈晓华\自媒体\日志\fastRead\FastReadServer\bin\FastReadServer.pdb
+C:\陈晓华\自媒体\日志\fastRead\FastReadServer\bin\common.dll
+C:\陈晓华\自媒体\日志\fastRead\FastReadServer\bin\LitJSON.dll
+C:\陈晓华\自媒体\日志\fastRead\FastReadServer\bin\MySql.Data.dll
+C:\陈晓华\自媒体\日志\fastRead\FastReadServer\bin\SharpZipLib.dll
+C:\陈晓华\自媒体\日志\fastRead\FastReadServer\bin\System.Web.Extensions.dll
+C:\陈晓华\自媒体\日志\fastRead\FastReadServer\obj\Debug\FastReadServer.dll
+C:\陈晓华\自媒体\日志\fastRead\FastReadServer\obj\Debug\FastReadServer.pdb

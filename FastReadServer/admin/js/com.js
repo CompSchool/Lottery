@@ -142,6 +142,15 @@ var _Config = {
         this.getJson(scope, url, param, cb, error, "GET");
     };
 
+    //得到抽奖用户信息
+    window._IF.GetAwardUsers = function (scope, param, cb, error) {
+        !param && (param = {});
+        var url = "?act=GetAwardUsers";
+        this.getJson(scope, url, param, cb, error, "GET");
+    };
+
+    
+
 }).call(window);
 
 
