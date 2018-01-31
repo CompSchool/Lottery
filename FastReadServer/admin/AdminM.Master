@@ -304,6 +304,37 @@
                             </li>
                         </ul>
                     </li>
+
+                    <li id="liC">
+                        <a href="#" class="dropdown-toggle">
+                            <i class="menu-icon fa fa-cubes"></i>
+                            <span class="menu-text">抽奖</span>
+
+                            <b class="arrow fa fa-angle-down"></b>
+                        </a>
+
+                        <b class="arrow"></b>
+
+                        <ul class="submenu">
+
+                            <li class="">
+                                <a href="AwardManager.aspx">
+                                    <i class="menu-icon fa fa-caret-right"></i>
+                                    奖品
+                                </a>
+                                <b class="arrow"></b>
+                            </li>
+                            <li class="">
+                                <a href="AwardUsers.aspx">
+                                    <i class="menu-icon fa fa-caret-right"></i>
+                                    用户
+                                </a>
+
+                                <b class="arrow"></b>
+                            </li>
+                            
+                        </ul>
+                    </li>
                 </ul>
                 <!-- /.nav-list -->
 
@@ -339,16 +370,20 @@
 
         <!-- layer -->
         <script src="js/com.js"></script>
+        <script src="js/AwardUsersCom.js"></script>
         <!-- inline scripts related to this page -->
     </form>
 
     <script>
-        if ("<%=m_PageId%>".indexOf("A") == 0) {
+        if ("<%=m_PageId%>".indexOf("Award") == 0) {
             $("#liA").addClass("open");
             $("#liA ul").show();
-        } else {
+        } else if ("<%=m_PageId%>".indexOf("B") == 0) {
             $("#liB").addClass("open");
             $("#liB ul").show();
+        } else if ("<%=m_PageId%>".indexOf("A") == 0) {
+            $("#liC").addClass("open");
+            $("#liC ul").show();
         }
     </script>
 </body>
